@@ -4,15 +4,14 @@ Für die einfache und konsistente Entwicklung wird eine einheitliche Umgebung zu
 
 ## tl;dr
 
-Die Entwicklungsumgebung ist vollständig containerisiert. (Das Skript muss einen Ordner unter .devcontainer ausgeführt werden):
+Die Entwicklungsumgebung ist vollständig containerisiert. Docker Desktop muss hochgefahren sein & laufen BEVOR man das Skript ausführt!
 
-`.\setup_env.ps1 -dependencies $false -name "NAME"`
+`.\setup_env.ps1  -name "NAME"`
 
 Wenn die Parameter nicht mit angegeben werden, wird der default Wert benutzt:
 
 Param | Funktion | Type | Default
 --- | --- | --- | ---
-dependencies | Installation Systemabhängigkeiten | Boolean | false
 name | Name des WSL | String | kraftwerk
 
 Mit der Ausführung wird ein Container mittels `devcontainer` erstellt und anschliessend in ein Subsystem konvertiert. Darin sind Dev Sachen enthalten, wie apt und pip packages und kleine Konfigurationen des Containers / Subsystems für einen entspannten Umgang.
@@ -47,3 +46,14 @@ Delete recently created container
 
 to set wsl $name as default
 - wsl -s $name
+
+### Troubleshooting
+wenn in Zeile 1 die Ausführung des Skripts failed  
+```powershell
+./install.sh: 1: set: Illegal option -  
+Feature "devtools lkw" (Unknown) failed to install!"  
+```
+
+dann z.B. mit Codespace das install.sh Skript (in local-features) öffnen und unten rechts CRLF zu LF ändern!
+Alternativ in .gitconfig (unter Users) im [Core] Segment folgendes hinzufügen:
+'autocrlf = false'
