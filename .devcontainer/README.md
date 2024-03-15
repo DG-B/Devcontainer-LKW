@@ -56,4 +56,4 @@ Feature "devtools lkw" (Unknown) failed to install!"
 
 dann z.B. mit Codespace das install.sh Skript (in local-features) öffnen und unten rechts CRLF zu LF ändern!
 Alternativ in .gitconfig (unter Users) im [Core] Segment folgendes hinzufügen:
-'autocrlf = false'
+`autocrlf = false`
