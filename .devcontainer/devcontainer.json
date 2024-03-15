@@ -4,10 +4,6 @@
   "image": "mcr.microsoft.com/devcontainers/python:3.10-bookworm",
   "features": {
     "ghcr.io/devcontainers/features/desktop-lite:1": {},
-    "ghcr.io/devcontainers/features/sshd:1": {
-			"START_SSHD": "true",
-      "NEW_PASSWORD": "qwertz."
-		},
     "ghcr.io/devcontainers/features/github-cli:1": {},
 	"./local-features/devtools": {}
   },
